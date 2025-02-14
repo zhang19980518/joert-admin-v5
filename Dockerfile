@@ -12,7 +12,7 @@ RUN pnpm store prune
 COPY . ./
 
 # 增加日志输出
-RUN pnpm run build
+RUN pnpm run build:ele
 
 FROM nginx:1.23.3-alpine as production-stage
 
