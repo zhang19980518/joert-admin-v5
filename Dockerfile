@@ -14,6 +14,12 @@ COPY . ./
 # 增加日志输出
 RUN pnpm run build:ele
 
+RUN ls
+
+RUN cd apps
+
+RUN ls
+
 FROM nginx:1.23.3-alpine as production-stage
 
 COPY --from=builder /app/nginx.conf /etc/nginx/nginx.conf
