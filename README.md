@@ -6,3 +6,10 @@
 基于vben v5的模板项目
 </div>
 
+## 运行项目
+> node 20
+```
+pnpm i
+
+pnpm run dev:ele
+```
