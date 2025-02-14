@@ -1,25 +1,20 @@
 FROM node:20.14.0 as builder
 
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
+
+
+COPY . ./
 
 RUN npm install -g pnpm
-RUN ls
+
 RUN pnpm install
 
 # 清理 pnpm 缓存
 RUN pnpm store prune
 
-COPY . ./
 
 # 增加日志输出
 RUN pnpm run build:ele
-
-RUN ls
-
-RUN cd apps
-
-RUN ls
 
 FROM nginx:1.23.3-alpine as production-stage
 
