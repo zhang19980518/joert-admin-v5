@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 RUN npm install -g pnpm
+RUN ls
 RUN pnpm install
 
 # 清理 pnpm 缓存
