@@ -3,30 +3,51 @@ import type { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     meta: {
-      icon: 'tabler:assembly',
-      order: 1,
-      title: '基础信息管理',
+      icon: 'tabler:brightness-half',
+      order: 2,
+      title: '日常运营管理',
     },
-    name: 'BaseInfo',
-    path: '/base/info',
+    name: 'Daily',
+    path: '/daily/info',
     children: [
       {
-        name: 'Elderly',
-        path: '/elderly',
-        component: () => import('#/views/base/elderly/index.vue'),
+        name: 'Occupancy',
+        path: '/occupancy',
         meta: {
           // ignoreAccess: true,
-          icon: 'tabler:mood-boy',
-          title: '老人档案管理',
+          icon: 'tabler:clipboard',
+          title: '入住与退住管理',
         },
+        children: [
+          {
+            name: 'Registration',
+            path: '/registration',
+            component: () => import('#/views/base/elderly/index.vue'),
+            meta: {
+              // ignoreAccess: true,
+              // icon: 'tabler:clipboard',
+              title: '入住登记',
+            },
+          },
+          {
+            name: 'jiesun',
+            path: '/jiesuan',
+            component: () => import('#/views/base/elderly/index.vue'),
+            meta: {
+              // ignoreAccess: true,
+              // icon: 'tabler:clipboard',
+              title: '退住结算',
+            },
+          },
+        ],
       },
       {
         name: 'Employees',
         path: '/employees',
         component: () => import('#/views/base/employees/index.vue'),
         meta: {
-          icon: 'carbon:workspace',
-          title: '员工管理',
+          icon: 'tabler:coin-yen',
+          title: '财务管理',
         },
       },
       {
@@ -34,8 +55,8 @@ const routes: RouteRecordRaw[] = [
         path: '/bunk',
         component: () => import('#/views/base/employees/index.vue'),
         meta: {
-          icon: 'tabler:bed',
-          title: '床位管理',
+          icon: 'tabler:cookie',
+          title: '基础餐饮管理',
         },
       },
     ],
