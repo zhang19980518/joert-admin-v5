@@ -4,59 +4,50 @@ const routes: RouteRecordRaw[] = [
   {
     meta: {
       icon: 'tabler:brightness-half',
-      order: 10,
-      title: '日常运营管理',
+      order: 30,
+      title: '安全管理',
     },
-    name: 'Daily',
-    path: '/daily/info',
+    name: 'Security',
+    path: '/security/info',
     children: [
       {
-        name: 'Occupancy',
-        path: '/occupancy',
+        name: 'Record',
+        path: '/record',
         meta: {
           // ignoreAccess: true,
           icon: 'tabler:clipboard',
-          title: '入住与退住管理',
+          title: '手工记录',
         },
         children: [
           {
-            name: 'Registration',
-            path: '/registration',
+            name: 'paper',
+            path: '/paper',
             component: () => import('#/views/base/elderly/index.vue'),
             meta: {
               // ignoreAccess: true,
               // icon: 'tabler:clipboard',
-              title: '入住登记',
+              title: '纸质健康记录',
             },
           },
           {
-            name: 'jiesun',
-            path: '/jiesuan',
+            name: 'Drug',
+            path: '/drug',
             component: () => import('#/views/base/elderly/index.vue'),
             meta: {
               // ignoreAccess: true,
               // icon: 'tabler:clipboard',
-              title: '退住结算',
+              title: '用药登记',
             },
           },
         ],
       },
       {
-        name: 'Employees',
-        path: '/employees',
+        name: 'Guest',
+        path: '/guest',
         component: () => import('#/views/base/employees/index.vue'),
         meta: {
           icon: 'tabler:coin-yen',
-          title: '财务管理',
-        },
-      },
-      {
-        name: 'Bunk',
-        path: '/bunk',
-        component: () => import('#/views/base/employees/index.vue'),
-        meta: {
-          icon: 'tabler:cookie',
-          title: '基础餐饮管理',
+          title: '访客管理',
         },
       },
     ],
