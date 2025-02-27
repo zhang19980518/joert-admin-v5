@@ -33,6 +33,28 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    meta: {
+      icon: 'lucide:layout-dashboard',
+      order: 1,
+      ignoreAccess: true,
+      title: '台账管理',
+    },
+    name: 'Bill',
+    path: '/bill',
+    children: [
+      {
+        name: 'Create',
+        path: '/create',
+        component: () => import('#/views/bill/create/index.vue'),
+        meta: {
+          affixTab: true,
+          icon: 'lucide:area-chart',
+          title: '创建台账',
+        },
+      },
+    ],
+  },
 ];
 
 export default routes;
