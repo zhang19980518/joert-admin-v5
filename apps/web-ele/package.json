@@ -43,11 +43,13 @@
     "@vueuse/core": "catalog:",
     "dayjs": "catalog:",
     "element-plus": "catalog:",
+    "jsencrypt": "^3.3.2",
     "pinia": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "unplugin-element-plus": "catalog:"
   }
 }
