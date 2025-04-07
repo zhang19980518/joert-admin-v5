@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     meta: {
+      authority: ['tabler', 'admin'],
       icon: 'tabler:brightness-half',
       order: 10,
       title: '日常运营管理',
@@ -14,6 +15,7 @@ const routes: RouteRecordRaw[] = [
         name: 'Occupancy',
         path: '/occupancy',
         meta: {
+          authority: ['occupancy', 'admin'],
           // ignoreAccess: true,
           icon: 'tabler:clipboard',
           title: '入住与退住管理',
@@ -24,6 +26,7 @@ const routes: RouteRecordRaw[] = [
             path: '/registration',
             component: () => import('#/views/base/elderly/index.vue'),
             meta: {
+              authority: ['registration', 'admin'],
               // ignoreAccess: true,
               // icon: 'tabler:clipboard',
               title: '入住登记',
@@ -34,6 +37,7 @@ const routes: RouteRecordRaw[] = [
             path: '/jiesuan',
             component: () => import('#/views/base/elderly/index.vue'),
             meta: {
+              authority: ['jiesuan', 'admin'],
               // ignoreAccess: true,
               // icon: 'tabler:clipboard',
               title: '退住结算',
