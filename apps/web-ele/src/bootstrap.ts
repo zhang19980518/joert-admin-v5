@@ -1,20 +1,20 @@
-import { createApp, watchEffect } from 'vue';
+import {createApp, watchEffect} from 'vue';
 
-import { registerAccessDirective } from '@vben/access';
-import { initTippy } from '@vben/common-ui';
-import { preferences } from '@vben/preferences';
-import { initStores } from '@vben/stores';
+import {registerAccessDirective} from '@vben/access';
+import {initTippy} from '@vben/common-ui';
+import {preferences} from '@vben/preferences';
+import {initStores} from '@vben/stores';
 import '@vben/styles';
 import '@vben/styles/ele';
+import ElementPlus, {ElLoading} from 'element-plus'
 
-import { useTitle } from '@vueuse/core';
-import { ElLoading } from 'element-plus';
+import {useTitle} from '@vueuse/core';
 
-import { $t, setupI18n } from '#/locales';
+import {$t, setupI18n} from '#/locales';
 
-import { initComponentAdapter } from './adapter/component';
+import {initComponentAdapter} from './adapter/component';
 import App from './app.vue';
-import { router } from './router';
+import {router} from './router';
 
 async function bootstrap(namespace: string) {
   // 初始化组件适配器
@@ -28,6 +28,7 @@ async function bootstrap(namespace: string) {
   //   zIndex: 2000,
   // });
   const app = createApp(App);
+  app.use(ElementPlus)
 
   // 注册Element Plus提供的v-loading指令
   app.directive('loading', ElLoading.directive);

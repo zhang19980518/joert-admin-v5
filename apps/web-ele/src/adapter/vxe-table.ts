@@ -18,7 +18,7 @@ setupVbenVxeTable({
         minHeight: 180,
         formConfig: {
           // 全局禁用vxe-table的表单配置，使用formOptions
-          enabled: false,
+          enabled: true,
         },
         proxyConfig: {
           autoLoad: true,
@@ -28,7 +28,7 @@ setupVbenVxeTable({
             list: 'records',
           },
           showActiveMsg: true,
-          showResponseMsg: false,
+          showResponseMsg: true,
         },
         round: true,
         showOverflow: true,
